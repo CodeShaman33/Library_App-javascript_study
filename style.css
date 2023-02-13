@@ -3,13 +3,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  button {
+}
+
+button {
     margin-bottom: 20px;
-  }
-  
-  form {
+}
+
+form {
     display: none;
     margin-bottom: 20px;
     width: 400px;
@@ -17,9 +17,9 @@ body {
     background-color: #f2f2f2;
     border-radius: 10px;
     text-align: center;
-  }
-  
-  .book {
+}
+
+.book {
     width: 400px;
     padding: 20px;
     background-color: #f2f2f2;
@@ -28,40 +28,48 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .titleDiv, .authorDiv, .isbnDiv {
+}
+
+.titleDiv,
+.authorDiv,
+.isbnDiv {
     margin-bottom: 10px;
     width: 100%;
     padding: 10px;
     background-color: rgb(187, 180, 180);
     border-radius: 10px;
-    
-  }
 
-  .titleDiv::before
-  {
+}
+
+.titleDiv::before {
     content: 'Title: ';
-  }
-  
-  .authorDiv::before
-  {
+}
+
+.authorDiv::before {
     content: 'Author: ';
     text-align: left;
-  }
+}
 
-  .isbnDiv::before
-  {
-    content: 'ISBN: ' ;
-  }
+.isbnDiv::before {
+    content: 'ISBN: ';
+}
 
-  *
-  {
+* {
     border: solid black 1px;
-  }
+}
 
-  .authorDiv::before, .isbnDiv::before, .authorDiv::before
-  {
+.authorDiv::before,
+.isbnDiv::before,
+.authorDiv::before {
     text-decoration: solid;
     font-size: 20px;
-  }
+}
+
+.deteleButton {
+    padding: 10px 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: -2px 4px 36px 7px rgba(152, 30, 182, 1);
+    -moz-box-shadow: -2px 4px 36px 7px rgba(152, 30, 182, 1);
+    box-shadow: -2px 4px 36px 7px rgba(152, 30, 182, 1);
+    margin-top: 20px;
+}

@@ -5,11 +5,13 @@ class Book {
     constructor(
         author = 'unknown',
         title = 'unknown',
-        ISBN = 'unknown'
+        ISBN = 'unknown',
+        read = false
     ) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
+        this.read = read;
     }
 
 }
@@ -35,17 +37,27 @@ function displayBooks() {
         isbnDiv.className = 'isbnDiv';
         isbnDiv.innerHTML = books[i].ISBN;
 
+        let readDiv = document.createElement('div');
+        readDiv.className = 'readDiv';
+        readDiv.innerHTML = books[i].read;
+
         let deleteButton = document.createElement('button');
         deleteButton.className = 'deteleButton';
         deleteButton.innerHTML = 'delete';
+        deleteButton.style.backgroundColor = 'green';
         deleteButton.addEventListener('click', function(){deleteBook(i);});
 
+        let changeStatusButton = document.createElement('button');
+        changeStatusButton.className = 'changeStatusButton';
+        changeStatusButton.innerHTML = 'change status';
+        changeStatusButton.addEventListener('click', function(){changeStatus(i);});
 
-
-        book.appendChild(authorDiv)
-        book.appendChild(titleDiv)
-        book.appendChild(isbnDiv)
-        book.appendChild(deleteButton)
+        book.appendChild(authorDiv);
+        book.appendChild(titleDiv);
+        book.appendChild(isbnDiv);
+        book.appendChild(readDiv);
+        book.appendChild(deleteButton);
+        book.appendChild(changeStatusButton);
 
     }
 }
@@ -70,6 +82,9 @@ document.getElementById('myForm').addEventListener('submit',
 
         let newBook = new Book(author, title, isbn);
         books.push(newBook);
+        author = '';
+        title = '';
+        isbn = '';
         displayBooks();
         return false;
 
@@ -82,5 +97,19 @@ document.getElementsByClassName('deleteButton').addEventListener('click', delete
 function deleteBook(index)
 {
     books.splice(index, 1);
+    displayBooks();
+}
+
+function changeStatus(index)
+{
+    if (books[index].read === false)
+    {
+        books[index].read = true;
+    }
+    else
+    {
+        books[index].read = false;
+    }
+
     displayBooks();
 }
