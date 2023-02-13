@@ -1,4 +1,5 @@
 let books = ['safdsfd'];
+let variable = 0;
 
 
 class Book {
@@ -28,6 +29,8 @@ function displayBooks() {
         let titleDiv = document.createElement('div');
         titleDiv.className = 'titleDiv';
         titleDiv.innerHTML = books[i].title;
+        titleDiv.addEventListener('click', function(){change(i);});
+
 
         let authorDiv = document.createElement('div');
         authorDiv.className = 'authorDiv';
@@ -36,6 +39,7 @@ function displayBooks() {
         let isbnDiv = document.createElement('div');
         isbnDiv.className = 'isbnDiv';
         isbnDiv.innerHTML = books[i].ISBN;
+
 
         let readDiv = document.createElement('div');
         readDiv.className = 'readDiv';
@@ -112,4 +116,21 @@ function changeStatus(index)
     }
 
     displayBooks();
+}
+
+function change(index)
+{
+    var formHTML = '<form id="myForm2">' +
+                  '<label for="name">Value:</label>' +
+                  '<input type="text" id="value" name="name" required>' +
+                  
+                  '<input type="submit" value="Submit">' +
+                  '</form>';
+
+  var popup = window.open("", "Form Popup", "height=300,width=500");
+  popup.document.write(formHTML);
+
+  document.getElementById('myForm2').addEventListener('submit', function(event){event.preventDefault(); books[index].title = document.getElementById('value').value; displayBooks();})
+
+  popup.document.close();
 }
