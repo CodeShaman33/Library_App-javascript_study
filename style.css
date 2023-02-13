@@ -32,5 +32,36 @@ body {
   
   .titleDiv, .authorDiv, .isbnDiv {
     margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(187, 180, 180);
+    border-radius: 10px;
+    
+  }
+
+  .titleDiv::before
+  {
+    content: 'Title: ';
   }
   
+  .authorDiv::before
+  {
+    content: 'Author: ';
+    text-align: left;
+  }
+
+  .isbnDiv::before
+  {
+    content: 'ISBN: ' ;
+  }
+
+  *
+  {
+    border: solid black 1px;
+  }
+
+  .authorDiv::before, .isbnDiv::before, .authorDiv::before
+  {
+    text-decoration: solid;
+    font-size: 20px;
+  }
