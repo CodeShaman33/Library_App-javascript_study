@@ -32,7 +32,8 @@ form {
 
 .titleDiv,
 .authorDiv,
-.isbnDiv {
+.isbnDiv,
+.readDiv {
     margin-bottom: 10px;
     width: 100%;
     padding: 10px;
@@ -60,16 +61,29 @@ form {
 
 .authorDiv::before,
 .isbnDiv::before,
-.authorDiv::before {
+.authorDiv::before,
+.readDiv::before {
     text-decoration: solid;
     font-size: 20px;
 }
 
-.deteleButton {
+.deteleButton,
+.changeStatusButton {
     padding: 10px 20px;
     border-radius: 10px;
     -webkit-box-shadow: -2px 4px 36px 7px rgba(152, 30, 182, 1);
     -moz-box-shadow: -2px 4px 36px 7px rgba(152, 30, 182, 1);
     box-shadow: -2px 4px 36px 7px rgba(152, 30, 182, 1);
     margin-top: 20px;
+}
+
+.readDiv::before {
+    content: 'read: ';
+}
+
+.changeStatusButton:hover,
+.deteleButton:hover {
+    -webkit-box-shadow: -2px 4px 55px 23px rgba(83, 49, 93, 1);
+    -moz-box-shadow: -2px 4px 55px 23px rgba(83, 49, 93, 1);
+    box-shadow: -2px 4px 55px 23px rgba(83, 49, 93, 1);
 }
