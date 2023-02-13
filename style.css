@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: none;
+    margin-bottom: 20px;
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .book {
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .titleDiv, .authorDiv, .isbnDiv {
+    margin-bottom: 10px;
+  }
+  
